@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap&subset=cyrillic');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-red: #ff0040;
+  --neon-gold: #ffd700;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #e0e0e0;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border: 1px solid #ff0040;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0040;
+}
+
+/* Neon Glow Utilities */
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 0, 64, 0.7), 0 0 20px rgba(255, 0, 64, 0.5);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.box-glow-red {
+  box-shadow: 0 0 15px rgba(255, 0, 64, 0.3), inset 0 0 10px rgba(255, 0, 64, 0.1);
+}
+
+.drop-shadow-neon {
+  filter: drop-shadow(0 0 5px rgba(255, 0, 64, 0.8)) drop-shadow(0 0 10px rgba(255, 0, 64, 0.4));
+}
+
+.drop-shadow-gold {
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+}
+
+/* Scanline Effect */
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Clip Path for Angular Buttons */
+.clip-cyber {
+  clip-path: polygon(
+    10px 0, 100% 0, 
+    100% calc(100% - 10px), 
+    calc(100% - 10px) 100%, 
+    0 100%, 
+    0 10px
+  );
+}
+
+.clip-cyber-card {
+  clip-path: polygon(
+    20px 0, 100% 0, 
+    100% calc(100% - 20px), 
+    calc(100% - 20px) 100%, 
+    0 100%, 
+    0 20px
+  );
+}
